@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/francislu2021/readme-gen/issues"
   },
-  "homepage": "https://github.com/francislu2021/readme-gen#readme"
+  "homepage": "https://github.com/francislu2021/readme-gen#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2",
+    "pino": "^6.13.0"
+  }
 }
