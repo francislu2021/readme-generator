@@ -1,0 +1,19 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "# User Story AS A developer I WANT a README generator SO THAT I can quickly create a professional README for a new project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francislu2021/readme-gen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francislu2021/readme-gen/issues"
+  },
+  "homepage": "https://github.com/francislu2021/readme-gen#readme"
+}
