@@ -5,73 +5,73 @@ const fs = require("fs");
 inquirer.prompt(
     [{
             type: "input",
-            message: "What is your project title?",
+            message: "Please enter your project title.",
             name: "title",
-            validate: (value) => { if (value) { return true } else { return "I need a value to continue" } }
+            validate: (value) => { if (value) { return true } else { return "Please enter a value to continue!" } }
         },
 
         {
             type: "input",
-            message: "If applicable, please list the steps required to install your project?",
+            message: "Please indicate how you will install the application.",
             name: "installation",
-            validate: (value) => { if (value) { return true } else { return "I need a value to continue" } }
+            validate: (value) => { if (value) { return true } else { return "Please enter a value to continue!" } }
         },
 
         {
             type: "input",
-            message: "Give a description of your project.",
+            message: "Please enter a brief description of your project.",
             name: "description",
-            validate: (value) => { if (value) { return true } else { return "I need a value to continue" } }
+            validate: (value) => { if (value) { return true } else { return "Please enter a value to continue!" } }
         },
 
         {
             type: "input",
-            message: "Provide instructions and examples of your project in use for the Usage section.",
+            message: "Please describe the purpose and specific usage of your project.",
             name: "usage",
-            validate: (value) => { if (value) { return true } else { return "I need a value to continue" } }
+            validate: (value) => { if (value) { return true } else { return "please enter a value to continue!" } }
         },
 
         {
             type: "input",
-            message: "If applicable provide instructions and examples for use with screenshot if needed.",
+            message: "Please briefly describe the instructions of your application.",
             name: "instructions",
-            validate: (value) => { if (value) { return true } else { return "I need a value to continue" } }
+            validate: (value) => { if (value) { return true } else { return "Please enter a value to continue!" } }
         },
         //add checkbox for licence
         {
             type: "list",
-            message: "What licence did you use?",
+            message: "What licence do you have?",
             name: "licence",
             choices: ["MIT Licence", "GPL Licence", "Apache Licence", "GNU Licence", "N/A"],
-            validate: (value) => { if (value) { return true } else { return "I need a value to continue" } }
+            validate: (value) => { if (value) { return true } else { return "Please pick a value to continue!" } }
         },
 
         {
             type: "input",
-            message: "For an README entitled questions contact me via Git with my username.",
+            message: "Please enter your GitHub account name.",
             name: "GitHub",
-            validate: (value) => { if (value) { return true } else { return "I need a value to continue" } }
+            validate: (value) => { if (value) { return true } else { return "Please enter a value to continue!" } }
         },
 
         {
             type: "input",
-            message: "If applicable, provide guidelines on how other developers can contribute to your project.",
-            name: "credit",
-            validate: (value) => { if (value) { return true } else { return "I need a value to continue" } }
+            message: "Idealy, how would you like users to contribute to your project?",
+            name: "contribution",
+            validate: (value) => { if (value) { return true } else { return "Please enter a value to continue!" } }
         },
 
         {
             type: "input",
-            message: "If applicable, provide any tests written for your application and provide examples on how to run them.",
+            message: "Please briefly describe the testing details of the application.",
             name: "test",
-            validate: (value) => { if (value) { return true } else { return "I need a value to continue" } }
+            validate: (value) => { if (value) { return true } else { return "Please enter a value to continue!" } }
         },
 
         {
             type: "input",
             message: "For contribution and any additional questions you can contact me by email.",
             name: "email",
-            validate: (value) => { if (value) { return true } else { return "I need a value to continue" } }
+            validate: (value) => { if (value) { return true } else { return "Please enter a value to continue"} }
         },
     ]
 ).then(({
@@ -81,7 +81,7 @@ inquirer.prompt(
     usage,
     licence,
     GitHub,
-    credit,
+    contribution,
     test,
     email
 }) => {
@@ -96,8 +96,8 @@ inquirer.prompt(
     ${ installation }
     ## Usage 
     ${ usage }
-    ## Credits 
-    ${ credit}
+    ## Contribution 
+    ${ contribution}
     ## Description 
     ${ description }
     ## Licence 
@@ -118,7 +118,7 @@ function createNewFile(fileName, data) {
         if (err) {
             console.log(err)
         }
-        console.log("Your README file has been generated");
+        console.log("Congradulations! Your README file now is generated");
 
 
 
