@@ -1,3 +1,4 @@
+// import inquirer and fs modules
 const inquirer = require("inquirer");
 const fs = require("fs");
 
@@ -7,6 +8,7 @@ inquirer.prompt(
             type: "input",
             message: "Please enter your project title.",
             name: "title",
+            //to use validate to make sure users must enter a value to continue in order to generate a proper readme
             validate: (value) => { if (value) { return true } else { return "Please enter a value to continue!" } }
         },
 
@@ -37,7 +39,7 @@ inquirer.prompt(
             name: "instructions",
             validate: (value) => { if (value) { return true } else { return "Please enter a value to continue!" } }
         },
-        //add checkbox for licence
+        //to add checkbox for licence choices
         {
             type: "list",
             message: "What licence do you have?",
@@ -85,7 +87,7 @@ inquirer.prompt(
     test,
     email
 }) => {
-    //create template to be used
+    //create readme template to be included in the file when writeFile into it
     const template = `# ${ title }
     *[Installation](#installation) 
     *[Description](#description) 
@@ -108,11 +110,11 @@ inquirer.prompt(
         *GitHub: ${ GitHub } 
         *email: ${ email }`;
 
-    //set function to create README with fs
+    //set createNewfILE function to create README with fs
     createNewFile(title, template);
 });
 
-//set a function to create README file
+//CREATE a function to create README file
 function createNewFile(fileName, data) {
     fs.writeFile(`./${fileName.toLowerCase().split(" ").join(" ")}.md`, data, (err) => {
         if (err) {
